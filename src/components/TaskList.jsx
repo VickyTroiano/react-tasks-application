@@ -6,15 +6,12 @@ function TaskList() {
   const { tasks } = useContext(TaskContext);
 
   if (tasks.length === 0) {
-    return <h1>No hay tareas aun</h1>;
+    return <h1 className="text-white text-4xl font-bold text-center">No hay tareas aún</h1>;
   }
 
   return (
-    <div>
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
       {tasks.map((task) => (
-        //le pasamos un prop task
-
-        //cada vez q se recorre el task va a generar un taskCard que incluira los datos de task
         <TaskCard key={task.id} task={task} />
       ))}
     </div>

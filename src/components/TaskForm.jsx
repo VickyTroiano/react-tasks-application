@@ -1,18 +1,16 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { TaskContext } from "../context/TaskContext";
 
-
-function TaskForm({ createTask }) {
+function TaskForm() {
   //cuando se ejecuta el formulario voy a leer el valor title
   const [title, setTitle] = useState("");
-
   const [description, setDescription] = useState("");
+  const { createTask } = useContext(TaskContext);
+ 
 
   //maneja el evento submit del formulario
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    //le pasan un valor a esta funcion
-    console.log(title, description);
     createTask({
       title,
       description,
@@ -20,6 +18,7 @@ function TaskForm({ createTask }) {
     setTitle("");
     setDescription("");
   };
+
   return (
     <form onSubmit={handleSubmit}>
       <input

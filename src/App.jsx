@@ -22,10 +22,21 @@ function App() {
       },
     ]);
   }
+
+  function deleteTask(taskId) {
+    console.log(tasks)
+    console.log(taskId)
+    //por cada tarea recorrida, confirma que el id que se esta pasando es igual al id de las tareas
+    // si es falso se queda
+    setTasks(tasks.filter(task => task.id !== taskId))
+
+    
+  }
   return (
     <>
       <TaskForm createTask={createTask} />
-      <TaskList tasks={tasks} />
+      {/* tasklist usa deleteTask */}
+      <TaskList tasks={tasks} deleteTask={deleteTask} />
     </>
   );
 }

@@ -1,5 +1,7 @@
 import TaskCard from './TaskCard'
-function TaskList({ tasks }) {
+
+
+function TaskList({ tasks, deleteTask }) {
   if (tasks.length === 0) {
     return <h1>No hay tareas aun</h1>;
   }
@@ -10,7 +12,7 @@ function TaskList({ tasks }) {
         //le pasamos un prop task
 
         //cada vez q se recorre el task va a generar un taskCard que incluira los datos de task
-        <TaskCard key={task.id} task={task}/>
+        <TaskCard key={task.id} task={task} deleteTask={deleteTask}/>
       ))}
     </div>
   );

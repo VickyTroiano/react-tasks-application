@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+
 function TaskForm({ createTask }) {
   //cuando se ejecuta el formulario voy a leer el valor title
   const [title, setTitle] = useState("");
@@ -16,8 +17,8 @@ function TaskForm({ createTask }) {
       title,
       description,
     });
-    setTitle('')
-    setDescription('')
+    setTitle("");
+    setDescription("");
   };
   return (
     <form onSubmit={handleSubmit}>
